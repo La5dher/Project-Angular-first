@@ -12,6 +12,10 @@ import { PricePipe } from './pipes/price.pipe';
 import { NavMenuComponent } from './Etudiant/Components/nav-menu/nav-menu.component';
 import { AcceuilComponent } from './Etudiant/Components/acceuil/acceuil.component';
 import { IdPipe } from './pipes/id.pipe';
+import { NavBarBOComponent } from './Admin/Components/nav-bar-bo/nav-bar-bo.component';
+import { MainBoComponent } from './Admin/main-bo/main-bo.component';
+import { MainFoComponent } from './Etudiant/main-fo/main-fo.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 
 @NgModule({
@@ -25,7 +29,11 @@ import { IdPipe } from './pipes/id.pipe';
     PricePipe,
     NavMenuComponent,
     AcceuilComponent,
-    IdPipe
+    IdPipe,
+    NavBarBOComponent,
+    MainFoComponent,
+    MainBoComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,
