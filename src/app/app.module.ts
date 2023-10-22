@@ -8,6 +8,8 @@ import { ListEventComponent } from './Etudiant/Components/list-event/list-event.
 import { AboutUsComponent } from './Etudiant/Components/about-us/about-us.component';
 import { Error404Component } from './Etudiant/Components/error404/error404.component';
 import { SelectedEventComponent } from './Etudiant/Components/selected-event/selected-event.component';
+import { PricePipe } from './pipes/price.pipe';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { SelectedEventComponent } from './Etudiant/Components/selected-event/sel
     ListEventComponent,
     AboutUsComponent,
     Error404Component,
-    SelectedEventComponent
+    SelectedEventComponent,
+    PricePipe
   ],
   imports: [
     BrowserModule,

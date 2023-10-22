@@ -1,7 +1,14 @@
 
 <ng-container *ngIf="Play">
-<p>{{Play.intitule}}</p>
-<img [src]="Play.photo" alt="photoEvent">
-<p>{{Play.date|date}}</p>
-<button [routerLink]="['/listePieces',Play.id]">Détails</button>
+    <h2>Piece: {{Play.intitule}}</h2>
+    <p>Id: {{Play.id}}</p>
+    <img [src]="Play.photo" alt="photoEvent">
+    <p>Lieu: {{Play.lieu}}</p>
+    <p>Le: {{Play.date|date}}</p>
+    <input type="number" value="1" id="nombreTickets">
+    <button>Obtenir Ticket {{Play.prixTicket|number:'.3'|price}}</button>
+
+
+
+    <h3>Commentaires</h3>
 </ng-container>
