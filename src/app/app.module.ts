@@ -11,7 +11,6 @@ import { SelectedEventComponent } from './Etudiant/Components/selected-event/sel
 import { PricePipe } from './pipes/price.pipe';
 import { NavMenuComponent } from './Etudiant/Components/nav-menu/nav-menu.component';
 import { AcceuilComponent } from './Etudiant/Components/acceuil/acceuil.component';
-import { IdPipe } from './pipes/id.pipe';
 
 
 @NgModule({
@@ -24,8 +23,7 @@ import { IdPipe } from './pipes/id.pipe';
     SelectedEventComponent,
     PricePipe,
     NavMenuComponent,
-    AcceuilComponent,
-    IdPipe
+    AcceuilComponent
   ],
   imports: [
     BrowserModule,
