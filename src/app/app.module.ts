@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EventComponent } from './Etudiant/event/event.component';
-import { ListEventComponent } from './Etudiant/list-event/list-event.component';
+import { EventComponent } from './Etudiant/Components/event/event.component';
+import { ListEventComponent } from './Etudiant/Components/list-event/list-event.component';
 
 @NgModule({
   declarations: [

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Event } from 'src/app/Classes/event';
 
 @Component({
   selector: 'app-event',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent {
-
+ @Input()Play!:Event;
 }
