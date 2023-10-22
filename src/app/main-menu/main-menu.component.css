@@ -23,9 +23,9 @@ a{
 }
 
 .rightside:hover{
-    filter: grayscale(30%);
+    filter: grayscale(70%);
 }
 
 .leftside:hover{
-    filter: grayscale(30%);
+    filter: grayscale(70%);
 }

@@ -10,7 +10,7 @@ import { MainBoComponent } from './Admin/main-bo/main-bo.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 
 const routes: Routes = [
-  {path:'Mainmenu', title:'Welcome!', component:MainMenuComponent},
+  {path:'Mainmenu', title:'Your Drama', component:MainMenuComponent},
   {path:'user', title:'User Interface', component:MainFoComponent, children:[
     {path:'acceuil', title:'Acceuil', component:AcceuilComponent},
     {path:'listePieces', title:'Liste des Pièces', component:ListEventComponent},
