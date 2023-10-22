@@ -9,6 +9,16 @@
     <button (click)="OnAnnuler()" *ngIf="acheter">Annuler Achat</button>
     <p>Vous avez {{nbrTicketsAchete}} Ticket(s) pour cette Pièce</p>
 
-
+    <hr>
     <h3>Commentaires</h3>
+    <div id="commentSection">
+        <ng-container *ngFor="let item of Play.commentaires">
+            <p><span id="nom">{{item.nom}}</span> - {{item.date|date}}</p>
+            <p>{{item.message}}</p>
+        </ng-container>
+        
+    </div>
+    <input type="text" #nomComment placeholder="Nom.."> <br>
+    <input type="text" #messageComment placeholder="Message..">
+    <button (click)="onAjoute(nomComment.value, messageComment.value)">Ajouter</button>
 </ng-container>
