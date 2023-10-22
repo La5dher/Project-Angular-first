@@ -8,4 +8,4 @@ import { Event } from 'src/app/Classes/event';
 })
 export class EventComponent {
  @Input()Play!:Event;
-}
+ }
