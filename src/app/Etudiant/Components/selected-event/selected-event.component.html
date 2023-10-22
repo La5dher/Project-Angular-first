@@ -19,6 +19,6 @@
         
     </div>
     <input type="text" #nomComment placeholder="Nom.."> <br>
-    <input type="text" #messageComment placeholder="Message..">
+    <textarea #messageComment placeholder="Message.." cols="30" rows="3"></textarea>
     <button (click)="onAjoute(nomComment.value, messageComment.value)">Ajouter</button>
 </ng-container>
