@@ -1,3 +1,11 @@
 #nombreTickets{
     width:3em;
 }
+#commentSection{
+    background-color: beige;
+    width: 60em;
+    height: 20em;
+}
+#nom{
+    text-decoration: underline;
+}

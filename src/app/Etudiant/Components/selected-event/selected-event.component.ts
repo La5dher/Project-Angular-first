@@ -45,4 +45,8 @@ export class SelectedEventComponent implements OnInit{
       this.acheter=false;
       this.nbrTicketsAchete=0;
   }
+  onAjoute(nom:string, message:string){
+    let Id=this.serviceActivatedRoute.snapshot.params['id'];
+    this.servicePiece.addCommentById(Id, nom, message);
+  }
 }
