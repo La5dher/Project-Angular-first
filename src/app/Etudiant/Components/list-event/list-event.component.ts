@@ -13,4 +13,9 @@ export class ListEventComponent implements OnInit{
   ngOnInit(){
     this.tabPlays=this.servicePiece.getPlaysTable();
   }
+  onSearch(text:string){
+    this.tabPlays=this.servicePiece.getPlaysTableByName(text);
+    if (!isNaN(Number(text)) && text!="")
+      this.tabPlays=this.servicePiece.getPlaysTableById(text);
+  }
 }
