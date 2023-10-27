@@ -46,7 +46,11 @@ export class SelectedEventComponent implements OnInit{
       this.nbrTicketsAchete=0;
   }
   onAjoute(nom:string, message:string){
+    if (nom.trim()==""){
+      nom="Anonymous";
+    }
     let Id=this.serviceActivatedRoute.snapshot.params['id'];
     this.servicePiece.addCommentById(Id, nom, message);
+    
   }
 }
