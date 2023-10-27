@@ -18,7 +18,7 @@ export class SelectedEventComponent implements OnInit{
   constructor(private servicePiece:PiecesService, private serviceActivatedRoute:ActivatedRoute){}
   ngOnInit(){
     let Id=this.serviceActivatedRoute.snapshot.params['id'];
-    this.Play=this.servicePiece.getPlaysTableById(Id);
+    this.Play=this.servicePiece.getPlaysById(Id);
     if (this.Play!==undefined){
       this.prixTotal=this.Play.prixTicket;
     }

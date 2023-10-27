@@ -1,4 +1,5 @@
 <h2>Liste des Pièces</h2>
+<input type="text" #search><button (click)="onSearch(search.value)">search</button>
 <ul>
     <li *ngFor="let item of tabPlays">
         <app-event [Play]="item"></app-event>

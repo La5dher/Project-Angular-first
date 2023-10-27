@@ -18,10 +18,18 @@ export class PiecesService {
   public getPlaysTable(){
     return this.tabPlays;
   }
-  public getPlaysTableById(id:number){
+  public getPlaysById(id:number){
     return this.tabPlays.find(elt=>elt.id==id);
   }
   public addCommentById(id:number, nom:string, message:string){
-    this.tabPlays.find(elt=>elt.id==id)?.commentaires.push(new Commentaire(nom, new Date(), message));
+    this.getPlaysById(id)?.commentaires.push(new Commentaire(nom, new Date(), message));
+  }
+
+  public getPlaysTableByName(text:string){
+    return this.tabPlays.filter(elt=>elt.intitule.toUpperCase().includes(text.toUpperCase()));
+  }
+
+  public getPlaysTableById(text:string){
+    return this.tabPlays.filter(elt=>elt.id==Number(text));
   }
 }
