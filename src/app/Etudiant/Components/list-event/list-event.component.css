@@ -1,0 +1,25 @@
+#contains{
+    margin: 10% 10%;
+}
+#contained{
+    margin: 10% 0%;
+}
+.container, .col-md-4{
+    margin-top: 5%;
+}
+
+#search{
+    margin: 0% 5%;
+    width: 50%;
+    border: 0.2em solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 1em;
+    
+}
+
+#notFound{
+    text-align: center;
+    font-size: 1.5em;
+}

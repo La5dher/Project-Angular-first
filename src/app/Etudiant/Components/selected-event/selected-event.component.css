@@ -5,7 +5,16 @@
     background-color: beige;
     width: 60em;
     height: 20em;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 #nom{
     text-decoration: underline;
+}
+
+#contains{
+    margin: 5% 10%;
+}
+#contained{
+    margin: 5% 0%;
 }

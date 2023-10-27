@@ -1,7 +1,19 @@
-<h2>Liste des Pièces</h2>
-<input type="text" #search><button (click)="onSearch(search.value)">search</button>
-<ul>
-    <li *ngFor="let item of tabPlays">
-        <app-event [Play]="item"></app-event>
-    </li>
-</ul>
+<div id="contains">
+    <h2>Liste des Pièces</h2>
+    <div id="contained">
+        <input type="text" placeholder="Chercher Pièces avec ID ou nom..." id="search" #search><button (click)="onSearch(search.value)">search</button>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" *ngFor="let item of tabPlays">
+                    <app-event [Play]="item"></app-event>
+                    
+                </div>
+                <ng-container *ngIf="tabPlays.length==0">
+                    <p id="notFound">Aucun résultat trouvé!</p>
+                </ng-container>
+            </div>
+        </div>
+
+    </div>
+</div>
