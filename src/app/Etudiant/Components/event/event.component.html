@@ -1,4 +1,4 @@
-<p>{{Play.intitule}}</p>
+<p>{{Play.intitule}}<i *ngIf="Play.isEnfantGratuit" class="fa-solid fa-child"></i></p>
 <img [src]="Play.photo" alt="photoEvent">
 <p>{{Play.date|date}}</p>
 <button [routerLink]="['/user/listePieces',Play.id]">Détails</button>
