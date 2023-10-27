@@ -10,22 +10,67 @@ a{
 }
 
 .leftside{
-    background-color: red;
-    transition: filter 2s;
-    filter: grayscale(90%);
-}
-
-
-.rightside{
-    background-color: blue;
-    transition: filter 2s;
-    filter: grayscale(90%);
-}
-
-.rightside:hover{
-    filter: grayscale(70%);
+    background-image: url(src\assets\happy.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(20%);
 }
 
 .leftside:hover{
-    filter: grayscale(70%);
+    animation: card1 2s forwards;
 }
+
+.rightside{
+    background-image: url(src\assets\sadge.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(20%);
+}
+
+.rightside:hover{
+    animation: card2 2s forwards;
+}
+
+
+@keyframes card1 {
+    0% { }
+    50% {filter: brightness(90%);
+        background-image: url(src\assets\happy.jpg) ;
+        transform: scale(0.6) rotate(-10deg);
+    }
+  
+
+    75% {
+        filter: brightness(90%);
+        background-image: url(src\assets\sadge.jpg) ;
+        transform: scale(0.6) rotate(-15deg);
+    }
+  
+    100% {filter: brightness(90%);
+        background-image: url(src\assets\happy.jpg) ;
+        transform: scale(0.6) rotate(-20deg);
+    }
+  }
+
+  @keyframes card2 {
+    0% { }
+    50% {filter: brightness(90%);
+        background-image: url(src\assets\sadge.jpg) ;
+        transform: scale(0.6) rotate(10deg);
+    }
+  
+
+    75% {
+        filter: brightness(90%);
+        background-image: url(src\assets\happy.jpg) ;
+        transform: scale(0.6) rotate(15deg);
+    }
+  
+    100% {filter: brightness(90%);
+        background-image: url(src\assets\sadge.jpg) ;
+        transform: scale(0.6) rotate(20deg);
+    }
+  }
+
