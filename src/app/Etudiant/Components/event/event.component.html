@@ -1,4 +1,17 @@
-<p>{{Play.intitule}}<i *ngIf="Play.isEnfantGratuit" class="fa-solid fa-child"></i></p>
-<img [src]="Play.photo" alt="photoEvent">
-<p>{{Play.date|date}}</p>
-<button [routerLink]="['/user/listePieces',Play.id]">Détails</button>
+
+<div class="card text-center">
+
+    <div class="card-title">{{Play.intitule}}
+    <i *ngIf="Play.isEnfantGratuit" class="fa-solid fa-child"></i></div>
+
+    <div class="card-body">
+        <div class="card-text"><img [src]="Play.photo" alt="photoEvent">
+            <p>{{Play.date|date}}</p></div>
+    </div>
+
+    <div class="card-footer">
+        <button [routerLink]="['/user/listePieces',Play.id]">Détails</button>
+    </div>
+
+
+</div>

@@ -8,6 +8,12 @@ import { Commentaire } from '../Classes/commentaire';
 export class PiecesService {
   private tabPlays:Event[]=[
     new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
+    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
+    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
+    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
+    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
+    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
+    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
     [], "Municipal Theatre"),
     new Event(503, "Hamlet", "assets/Hamlet.jpg", 45, false, new Date("2024/6/26"), 
     [new Commentaire("Ghaith", new Date("2023-10-22"), "Bonjour")], "Municipal Theatre")

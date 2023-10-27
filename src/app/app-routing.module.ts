@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListEventComponent } from './Etudiant/Components/list-event/list-event.component';
 import { AboutUsComponent } from './Etudiant/Components/about-us/about-us.component';
-import { Error404Component } from './error404/error404.component';
 import { SelectedEventComponent } from './Etudiant/Components/selected-event/selected-event.component';
 import { AcceuilComponent } from './Etudiant/Components/acceuil/acceuil.component';
 import { MainFoComponent } from './Etudiant/main-fo/main-fo.component';
 import { MainBoComponent } from './Admin/main-bo/main-bo.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { Error404Component } from './error404/error404.component';
 
 const routes: Routes = [
   {path:'Mainmenu', title:'Your Drama', component:MainMenuComponent},

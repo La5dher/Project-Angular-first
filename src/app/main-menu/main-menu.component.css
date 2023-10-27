@@ -35,19 +35,23 @@ a{
 
 
 @keyframes card1 {
-    0% { }
+    0% {}
+
     50% {filter: brightness(90%);
         background-image: url(src\assets\happy.jpg) ;
         transform: scale(0.6) rotate(-10deg);
     }
-  
+    
+    60% { background-image: url(src\assets\BL.jpg) ; }
 
     75% {
         filter: brightness(90%);
         background-image: url(src\assets\sadge.jpg) ;
         transform: scale(0.6) rotate(-15deg);
     }
-  
+    
+    90% { background-image: url(src\assets\BL.jpg) ; }
+
     100% {filter: brightness(90%);
         background-image: url(src\assets\happy.jpg) ;
         transform: scale(0.6) rotate(-20deg);
@@ -60,17 +64,24 @@ a{
         background-image: url(src\assets\sadge.jpg) ;
         transform: scale(0.6) rotate(10deg);
     }
-  
+    60% { background-image: url(src\assets\BL.jpg) ; }
 
     75% {
         filter: brightness(90%);
         background-image: url(src\assets\happy.jpg) ;
         transform: scale(0.6) rotate(15deg);
     }
-  
+    90% { background-image: url(src\assets\BL.jpg) ; }
     100% {filter: brightness(90%);
         background-image: url(src\assets\sadge.jpg) ;
         transform: scale(0.6) rotate(20deg);
     }
   }
 
+#main{
+    background-image: url(src\assets\BL.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: cursive ;
+}
