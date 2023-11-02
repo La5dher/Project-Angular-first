@@ -1,0 +1,11 @@
+a{
+    font-size: 2em;
+    margin: 0 1em;
+}
+#link{
+    float: left;
+}
+
+.active{
+    text-decoration: underline;
+}

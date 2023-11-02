@@ -38,4 +38,8 @@ export class PiecesService {
   public getPlaysTableById(text:string){
     return this.tabPlays.filter(elt=>elt.id==Number(text));
   }
+
+  public deletePlaysTableById(id:number){
+    this.tabPlays=this.tabPlays.filter(elt=> elt.id != Number(id));
+  }
 }
