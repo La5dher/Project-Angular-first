@@ -5,7 +5,7 @@
         <h2>Pièce: {{Play.intitule}}{{Play.id|id}}</h2>
         </div>
         <img [src]="Play.photo" alt="photoEvent">
-        <p>Theatre: {{Play.lieu}}</p>
+        <p>Théâtre: {{Play.lieu}}</p>
         <p>Date: {{Play.date|date}}</p>
         <input type="number" min="1" max="10" (change)="onUpdatePrice(nombreTickets.value)" #nombreTickets [value]="nbrTickets" id="nombreTickets">
         <button (click)="onAcheter()">{{textBoutonAchat}} {{prixTotal|number:'.3'|price}}</button>

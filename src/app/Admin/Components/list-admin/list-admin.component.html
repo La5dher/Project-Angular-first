@@ -1,0 +1,13 @@
+
+<input type="text" placeholder="Entrer l'ID de Pièce..." id="search" #search><button (click)="onSearch(search.value)">search</button>
+
+<ul>
+    <li *ngFor="let item of tabPlays">
+        <app-admin-event (deleteRequest)="refresh($event)" [Play]="item"></app-admin-event>
+        
+    </li>
+</ul>
+
+<ng-container *ngIf="tabPlays.length==0">
+    <p id="notFound">Aucun résultat trouvé!</p>
+</ng-container>
