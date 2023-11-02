@@ -15,10 +15,15 @@ a{
     background-size: cover;
     background-position: center;
     filter: brightness(20%);
+    animation: card1 2s forwards;
 }
 
-.leftside:hover{
-    animation: card1 2s forwards;
+#divUser{
+    transition: transform 1s;
+}
+
+#divUser:hover{
+    transform: scale(0.7) rotate(10deg);
 }
 
 .rightside{
@@ -27,10 +32,15 @@ a{
     background-size: cover;
     background-position: center;
     filter: brightness(20%);
+    animation: card2 2s forwards;
 }
 
-.rightside:hover{
-    animation: card2 2s forwards;
+#divAdmin{
+    transition: transform 1s;
+}
+
+#divAdmin:hover{
+    transform: scale(0.7) rotate(-10deg);
 }
 
 
@@ -58,23 +68,27 @@ a{
     }
   }
 
+
+  
+
+
   @keyframes card2 {
     0% { }
     50% {filter: brightness(90%);
         background-image: url(src\assets\sadge.jpg) ;
-        transform: scale(0.6) rotate(10deg);
+        transform: translate(50px,120px) scale(0.6) rotate(10deg);
     }
     60% { background-image: url(src\assets\BL.jpg) ; }
 
     75% {
         filter: brightness(90%);
         background-image: url(src\assets\happy.jpg) ;
-        transform: scale(0.6) rotate(15deg);
+        transform: translate(50px,120px) scale(0.6) rotate(15deg);
     }
     90% { background-image: url(src\assets\BL.jpg) ; }
     100% {filter: brightness(90%);
         background-image: url(src\assets\sadge.jpg) ;
-        transform: scale(0.6) rotate(20deg);
+        transform: translate(50px,120px) scale(0.6) rotate(20deg);
     }
   }
 
