@@ -9,13 +9,41 @@ import { PiecesService } from 'src/app/Services/pieces.service';
 })
 export class ListEventComponent implements OnInit{
   tabPlays:Event[]=[];
+  val:string ="";
+
   constructor(private servicePiece:PiecesService){}
   ngOnInit(){
-    this.tabPlays=this.servicePiece.getPlaysTable();
+    this.servicePiece.getPlaysTable().subscribe( 
+      data => this.tabPlays=data
+    );
   }
   onSearch(text:string){
-    this.tabPlays=this.servicePiece.getPlaysTableByName(text);
-    if (!isNaN(Number(text)) && text!="")
-      this.tabPlays=this.servicePiece.getPlaysTableById(text);
+    
+    if(text!=""){ 
+      if (!isNaN(Number(text))){
+        this.servicePiece.getPlaysTableById(text).subscribe( 
+          data => this.tabPlays=data
+        );
+      }
+      else{
+        this.servicePiece.getPlaysTableByName(text).subscribe( 
+          data => this.tabPlays=data
+        );
+      }
+    }
+    else{
+      this.servicePiece.getPlaysTable().subscribe( 
+        data => this.tabPlays=data
+      );
+    }
   }
+
+  onCancel(){
+    this.servicePiece.getPlaysTable().subscribe( 
+      data => this.tabPlays=data
+    );
+    this.val="";
+  }
+
+
 }

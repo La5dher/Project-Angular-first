@@ -1,7 +1,9 @@
 <div id="contains">
     <h2>Liste des Pièces</h2>
     <div id="contained">
-        <input type="text" placeholder="Chercher Pièces avec ID ou nom..." id="search" #search><button (click)="onSearch(search.value)">search</button>
+        <input type="text" [(ngModel)]="val" placeholder="Chercher Pièces avec ID ou nom..." id="search" #search>
+        <button (click)="onSearch(search.value)">search</button>
+        <button (click)="onCancel()">X</button>
         
         <div class="container">
             <div class="row">

@@ -15,13 +15,19 @@ export class SelectedEventComponent implements OnInit{
   textBoutonAchat:string="Obtenir Ticket(s)";
   acheter:boolean=false;
   Play!:Event|undefined;
+
+
   constructor(private servicePiece:PiecesService, private serviceActivatedRoute:ActivatedRoute){}
   ngOnInit(){
     let Id=this.serviceActivatedRoute.snapshot.params['id'];
-    this.Play=this.servicePiece.getPlaysById(Id);
-    if (this.Play!==undefined){
-      this.prixTotal=this.Play.prixTicket;
-    }
+    this.servicePiece.getPlaysById(Id).subscribe( 
+      data =>{
+      this.Play=data
+      if (this.Play!==undefined){
+        this.prixTotal=this.Play.prixTicket;
+      }}
+    );
+    
   }
   onUpdatePrice(val:string){
     if (this.Play!==undefined){
@@ -46,11 +52,9 @@ export class SelectedEventComponent implements OnInit{
       this.nbrTicketsAchete=0;
   }
   onAjoute(nom:string, message:string){
-    if (nom.trim()==""){
-      nom="Anonymous";
+    if(message.trim()!=""){
+      let Id=this.serviceActivatedRoute.snapshot.params['id'];
+      this.servicePiece.addCommentById(Id, this.Play, nom, message).subscribe( );
     }
-    let Id=this.serviceActivatedRoute.snapshot.params['id'];
-    this.servicePiece.addCommentById(Id, nom, message);
-    
   }
 }

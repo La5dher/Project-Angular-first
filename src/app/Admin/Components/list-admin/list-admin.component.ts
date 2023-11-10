@@ -9,23 +9,47 @@ import { PiecesService } from 'src/app/Services/pieces.service';
 })
 export class ListAdminComponent implements OnInit{
   tabPlays:Event[]=[];
+  val:string ="";
+
   constructor(private servicePiece:PiecesService){}
   ngOnInit(){
-    this.tabPlays=this.servicePiece.getPlaysTable();
+    this.servicePiece.getPlaysTable().subscribe( 
+      data => this.tabPlays=data
+    );
   }
+
   onSearch(text:string){
-    if(text==""){ }
-    else if (!isNaN(Number(text))){
-      this.tabPlays=this.servicePiece.getPlaysTableById(text);
+    
+    if(text!=""){ 
+      if (!isNaN(Number(text))){
+        this.servicePiece.getPlaysTableById(text).subscribe( 
+          data => this.tabPlays=data
+        );
+      }
+      else{
+        this.servicePiece.getPlaysTableByName(text).subscribe( 
+          data => this.tabPlays=data
+        );
+      }
     }
     else{
-      alert("Tu peux chercher seulement avec l'ID");
+      this.servicePiece.getPlaysTable().subscribe( 
+        data => this.tabPlays=data
+      );
     }
   }
 
-  refresh(deleteRequest:number){
-    this.servicePiece.deletePlaysTableById(deleteRequest);
-    this.tabPlays=this.servicePiece.getPlaysTable();
+  deleteRequestSend(deleteRequest:number){
+    this.servicePiece.deletePlaysTableById(deleteRequest).subscribe( 
+      data => this.tabPlays=this.tabPlays.filter(function(elt){return elt.id!=deleteRequest})
+    );
     alert("Change saved successfully!");
+  }
+
+  onCancel(){
+    this.servicePiece.getPlaysTable().subscribe( 
+      data => this.tabPlays=data
+    );
+    this.val="";
   }
 }

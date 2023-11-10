@@ -13,6 +13,6 @@ export class AdminEventCheckComponent {
   constructor(private servicePiece:PiecesService, private serviceActivatedRoute:ActivatedRoute){}
   ngOnInit(){
     let Id=this.serviceActivatedRoute.snapshot.params['id'];
-    this.Play=this.servicePiece.getPlaysById(Id);
+    //this.Play=this.servicePiece.getPlaysById(Id);
   }
 }
