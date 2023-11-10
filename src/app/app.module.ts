@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { ListAdminComponent } from './Admin/Components/list-admin/list-admin.com
 import { AdminEventComponent } from './Admin/Components/list-admin/admin-event/admin-event.component';
 import { AdminEventCheckComponent } from './Admin/Components/list-admin/admin-event/admin-event-check/admin-event-check.component';
 import { AdminEventEditComponent } from './Admin/Components/list-admin/admin-event/admin-event-edit/admin-event-edit.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -48,7 +50,9 @@ import { AdminEventEditComponent } from './Admin/Components/list-admin/admin-eve
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,45 +1,45 @@
 import { Injectable } from '@angular/core';
 import { Event } from '../Classes/event';
 import { Commentaire } from '../Classes/commentaire';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+const URL = "http://localhost:3000/pieces";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PiecesService {
-  private tabPlays:Event[]=[
-    new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
-    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
-    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
-    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
-    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
-    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
-    [], "Municipal Theatre"),new Event(21, "Romeo and Juliet", "assets/RomeoAndJuliet.jpg", 25, true, new Date("2024/6/25"), 
-    [], "Municipal Theatre"),
-    new Event(503, "Hamlet", "assets/Hamlet.jpg", 45, false, new Date("2024/6/26"), 
-    [new Commentaire("Ghaith", new Date("2023-10-22"), "Bonjour")], "Municipal Theatre")
-  ];
+  private tabPlays:Event[]=[];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  public getPlaysTable(){
-    return this.tabPlays;
+  public getPlaysTable():Observable<Event[]>{
+    return this.http.get<Event[]>(URL);
   }
-  public getPlaysById(id:number){
-    return this.tabPlays.find(elt=>elt.id==id);
+
+  public getPlaysById(id:number):Observable<Event>{
+    return this.http.get<Event>(URL+"/"+id);
   }
-  public addCommentById(id:number, nom:string, message:string){
-    this.getPlaysById(id)?.commentaires.push(new Commentaire(nom, new Date(), message));
+  public addCommentById(id:number, play:Event|undefined, nom:string, message:string){
+    
+    if (nom.trim()==""){
+      nom="Anonymous";
+    }
+    let comment=new Commentaire(nom, new Date(), message);
+    play?.commentaires.push(comment);
+    return this.http.put<Event[]>(URL+"/"+id, play);
   }
 
   public getPlaysTableByName(text:string){
-    return this.tabPlays.filter(elt=>elt.intitule.toUpperCase().includes(text.toUpperCase()));
+    return this.http.get<Event[]>(URL+"?intitule="+text);
   }
 
-  public getPlaysTableById(text:string){
-    return this.tabPlays.filter(elt=>elt.id==Number(text));
+  public getPlaysTableById(id:string){
+    return this.http.get<Event[]>(URL+"?id="+id);
   }
 
   public deletePlaysTableById(id:number){
-    this.tabPlays=this.tabPlays.filter(elt=> elt.id != Number(id));
+    return this.http.delete<Event>(URL+"/"+id);
   }
 }
