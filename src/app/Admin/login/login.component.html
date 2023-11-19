@@ -1,0 +1,4 @@
+<h2>Authentification</h2>
+<label for="login">Donner le login: </label><input id="login" #login type="text"><br>
+<label for="mdp">Donner le mot de passe: </label><input id="mdp" #mdp type="password"><br>
+<button (click)="onLogin(login.value,mdp.value)">S'authentifier</button>

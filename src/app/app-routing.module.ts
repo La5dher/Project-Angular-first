@@ -12,6 +12,8 @@ import { SettingsComponent } from './Admin/Components/settings/settings.componen
 import { ListAdminComponent } from './Admin/Components/list-admin/list-admin.component';
 import { AdminEventCheckComponent } from './Admin/Components/list-admin/admin-event/admin-event-check/admin-event-check.component';
 import { AdminEventEditComponent } from './Admin/Components/list-admin/admin-event/admin-event-edit/admin-event-edit.component';
+import { adminGuardGuard } from './Guards/admin-guard.guard';
+import { LoginComponent } from './Admin/login/login.component';
 
 const routes: Routes = [
   {path:'Mainmenu', title:'Your Drama', component:MainMenuComponent},
@@ -23,7 +25,8 @@ const routes: Routes = [
     {path:'', redirectTo:'acceuil', pathMatch:'full'},
     
   ]},
-  {path:'admin', title:'Admin Interface', component:MainBoComponent, children:[
+  { path:'login', title:'Login', component:LoginComponent},
+  {path:'admin', canActivate:[adminGuardGuard], title:'Admin Interface', component:MainBoComponent, children:[
     {path:'gestion', title:'Gérer la liste des Pièces', component:ListAdminComponent},
     {path:'settings', title:'Paramètres', component:SettingsComponent},
     {path:'check/:id', title:'Détails', component:AdminEventCheckComponent},

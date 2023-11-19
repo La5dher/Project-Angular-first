@@ -23,6 +23,7 @@ import { AdminEventComponent } from './Admin/Components/list-admin/admin-event/a
 import { AdminEventCheckComponent } from './Admin/Components/list-admin/admin-event/admin-event-check/admin-event-check.component';
 import { AdminEventEditComponent } from './Admin/Components/list-admin/admin-event/admin-event-edit/admin-event-edit.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './Admin/login/login.component';
 
 
 
@@ -46,7 +47,8 @@ import { FormsModule } from '@angular/forms';
     SettingsComponent,
     AdminEventComponent,
     AdminEventCheckComponent,
-    AdminEventEditComponent
+    AdminEventEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
