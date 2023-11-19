@@ -10,7 +10,7 @@ const URL = "http://localhost:3000/pieces";
   providedIn: 'root'
 })
 export class PiecesService {
-  private tabPlays:Event[]=[];
+  
 
   constructor(private http: HttpClient) { }
 
@@ -42,4 +42,8 @@ export class PiecesService {
   public deletePlaysTableById(id:number){
     return this.http.delete<Event>(URL+"/"+id);
   }
+
+  
+
+
 }
