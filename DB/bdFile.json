@@ -6,7 +6,7 @@
       "photo": "assets/RomeoAndJuliet.jpg",
       "prixTicket": 25,
       "isEnfantGratuit": true,
-      "date": "2024/6/25",
+      "date": "2024-06-24T23:00:00.000Z",
       "commentaires": [
         {
           "nom": "Anonymous",
@@ -17,17 +17,27 @@
           "nom": "yes",
           "date": "2023-11-19T10:41:56.003Z",
           "message": "f"
+        },
+        {
+          "nom": "SAE",
+          "date": "2023-11-19T13:10:55.695Z",
+          "message": "HEEHEHE"
+        },
+        {
+          "nom": "Anonymous",
+          "date": "2023-11-19T13:10:59.380Z",
+          "message": "HEEHEHE"
         }
       ],
       "lieu": "Théâtre Municipal"
     },
     {
       "id": 503,
-      "intitule": "Hamlet",
+      "intitule": "Hamletd",
       "photo": "assets/Hamlet.jpg",
       "prixTicket": 45,
       "isEnfantGratuit": false,
-      "date": "2024/6/26",
+      "date": "2024-05-18T23:00:00.000Z",
       "commentaires": [
         {
           "nom": "Ghaith",

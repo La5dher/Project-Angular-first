@@ -43,7 +43,9 @@ export class PiecesService {
     return this.http.delete<Event>(URL+"/"+id);
   }
 
-  
+  public updatePlaysTableById(play:Event){
+    return this.http.put<Event>(URL+"/"+play.id,play);
+  }
 
 
 }

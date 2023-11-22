@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Event } from 'src/app/Classes/event';
 import { PiecesService } from 'src/app/Services/pieces.service';
@@ -10,11 +11,55 @@ import { PiecesService } from 'src/app/Services/pieces.service';
 })
 export class AdminEventEditComponent {
   Play!:Event|undefined;
-  DateString:string|undefined;
-  constructor(private servicePiece:PiecesService, private serviceActivatedRoute:ActivatedRoute){}
+  playEditForm!:FormGroup;
+  constructor(private servicePiece:PiecesService, private serviceActivatedRoute:ActivatedRoute, private formBuilder:FormBuilder){}
   ngOnInit(){
     let Id=this.serviceActivatedRoute.snapshot.params['id'];
-    //this.Play=this.servicePiece.getPlaysById(Id);
-    this.DateString=this.Play?.date.toDateString();
+    this.servicePiece.getPlaysById(Id).subscribe( 
+      data => {
+        this.Play=data;
+        this.playEditForm = this.formBuilder.nonNullable.group(
+          {
+            intitule:this.Play.intitule,
+            date:new Date(this.Play.date).toDateString(),
+            lieu:this.Play.lieu
+          }); 
+      }
+    );
+    
+  }
+
+  
+  onSubmit(){
+    if (this.Play!=undefined){
+      this.Play.intitule=this.playEditForm.value['intitule'];
+      this.Play.date=new Date(this.playEditForm.value['date']);
+      this.Play.lieu=this.playEditForm.value['lieu'];
+      console.log(this.Play);
+      this.servicePiece.updatePlaysTableById(this.Play).subscribe( 
+        data => {
+          this.Play=data;
+          
+        }
+      );
+      alert("Changes Saved Successfully!");
+    }
+    
+  }
+
+
+
+
+  onReset(){
+    this.playEditForm.reset({
+      intitule:this.Play?.intitule,
+      date:this.Play?.date.toDateString(),
+      lieu:this.Play?.lieu
+    });
+  }
+
+
+  onDelete(){
+    
   }
 }

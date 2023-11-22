@@ -1,29 +1,35 @@
 
 <ng-container *ngIf="Play">
-    <div id="contains">
-        <div id="contained">
-        <h2>Pièce: 
-            
-            <input type="text" id="changable" [value]="Play.intitule">
-            ID: <input type="text" id="id" [value]="Play.id">
+    <div id="contains" >
 
-        </h2>
-        </div>
-        <img [src]="Play.photo" alt="photoEvent">
-        <p>Théâtre: <input type="text" [value]="Play.lieu"></p>
-        <p>Date: <input type="text" id="date" [value]="DateString"></p>
+        <form  [formGroup]="playEditForm"  (ngSubmit)="onSubmit();onReset()">
+            <div id="contained">
+            <h2>
+                Pièce: <input type="text" id="changable" formControlName="intitule" >
+                ID: {{Play.id|id}}
 
-        <hr>
-        <h3>Commentaires</h3>
-        <div id="commentSection">
-            <ng-container *ngFor="let item of Play.commentaires">
-                <p><span id="nom">{{item.nom}}</span> - {{item.date|date}}<button>Supprimer message</button></p>
-                <p>{{item.message}}</p>
+            </h2>
+            </div>
+            <img [src]="Play.photo" alt="photoEvent">
+            <p>Théâtre: <input type="text" formControlName="lieu" ></p>
+            <p>Date: <input type="text" id="date" formControlName="date" ></p>
+            <button type="submit">Save Changes</button>
+        </form>
+            <hr>
+            <h3>Commentaires</h3>
+            <div id="commentSection">
+                <ng-container *ngFor="let item of Play.commentaires">
+                    <p><span id="nom">{{item.nom}}</span> - {{item.date|date}}
+                    <button (click)="onDelete()" >Supprimer message</button></p>
+                    <p>{{item.message}}</p>
+                    
+                </ng-container>
                 
-            </ng-container>
-            
-        </div>
+            </div>
 
-        <button>Save Changes</button>
+            
+        
+
+
     </div>
 </ng-container>
