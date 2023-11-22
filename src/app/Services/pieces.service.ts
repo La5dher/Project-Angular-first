@@ -28,7 +28,15 @@ export class PiecesService {
     }
     let comment=new Commentaire(nom, new Date(), message);
     play?.commentaires.push(comment);
-    return this.http.put<Event[]>(URL+"/"+id, play);
+    return this.http.put<Event>(URL+"/"+id, play);
+  }
+
+  public removeCommentByIndex(index:number, play:Event|undefined){
+    if(play){
+      play.commentaires=play?.commentaires.filter(function(elt){return elt!=play?.commentaires[index]});
+      console.log(play?.commentaires);
+    }
+    return this.http.put<Event[]>(URL+"/"+play?.id, play);
   }
 
   public getPlaysTableByName(text:string){
