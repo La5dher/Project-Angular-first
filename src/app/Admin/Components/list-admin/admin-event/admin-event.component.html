@@ -3,7 +3,6 @@
     Pièce: {{Play.intitule}}
     -- Le: {{Play.date|date}}
     -- Lieu: {{Play.lieu}}
-    <button [routerLink]="['/admin/check/',Play.id]">Check</button>
     <button [routerLink]="['/admin/edit/',Play.id]">Edit</button>
     <button (click)="onDelete(Play.id)">Delete</button>
 </div>

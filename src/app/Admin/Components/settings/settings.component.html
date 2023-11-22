@@ -1,1 +1,7 @@
-<p>settings works!</p>
+
+<input placeholder="Type old Password" #oldpass>
+<input placeholder="Type new Password">
+<input placeholder="Confirm new Password" #newpass>
+
+<button (click)="onChangeMdp(newpass.value, oldpass.value)">Change Password</button>
+<button (click)="onDisconnect()">Déconnexion</button>

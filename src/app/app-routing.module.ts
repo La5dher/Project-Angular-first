@@ -10,7 +10,6 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { Error404Component } from './error404/error404.component';
 import { SettingsComponent } from './Admin/Components/settings/settings.component';
 import { ListAdminComponent } from './Admin/Components/list-admin/list-admin.component';
-import { AdminEventCheckComponent } from './Admin/Components/list-admin/admin-event/admin-event-check/admin-event-check.component';
 import { AdminEventEditComponent } from './Admin/Components/list-admin/admin-event/admin-event-edit/admin-event-edit.component';
 import { adminGuardGuard } from './Guards/admin-guard.guard';
 import { LoginComponent } from './Admin/login/login.component';
@@ -29,7 +28,6 @@ const routes: Routes = [
   {path:'admin', canActivate:[adminGuardGuard], title:'Admin Interface', component:MainBoComponent, children:[
     {path:'gestion', title:'Gérer la liste des Pièces', component:ListAdminComponent},
     {path:'settings', title:'Paramètres', component:SettingsComponent},
-    {path:'check/:id', title:'Détails', component:AdminEventCheckComponent},
     {path:'edit/:id', title:'Editer', component:AdminEventEditComponent},
     {path:'', redirectTo:'gestion', pathMatch:'full'},
   ]},

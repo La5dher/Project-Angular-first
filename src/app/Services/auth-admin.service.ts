@@ -22,4 +22,12 @@ export class AuthAdminService {
   public isAuthenticated() {
     return localStorage.getItem('authenticated')=="true";
   }
+
+  public getPass(){
+    return this.pwd;
+  }
+
+  public passChange(value:string){
+    this.pwd=value;
+  }
 }

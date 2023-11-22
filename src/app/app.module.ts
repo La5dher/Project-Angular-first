@@ -20,9 +20,8 @@ import { Error404Component } from './error404/error404.component';
 import { SettingsComponent } from './Admin/Components/settings/settings.component';
 import { ListAdminComponent } from './Admin/Components/list-admin/list-admin.component';
 import { AdminEventComponent } from './Admin/Components/list-admin/admin-event/admin-event.component';
-import { AdminEventCheckComponent } from './Admin/Components/list-admin/admin-event/admin-event-check/admin-event-check.component';
 import { AdminEventEditComponent } from './Admin/Components/list-admin/admin-event/admin-event-edit/admin-event-edit.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './Admin/login/login.component';
 
 
@@ -46,7 +45,6 @@ import { LoginComponent } from './Admin/login/login.component';
     ListAdminComponent,
     SettingsComponent,
     AdminEventComponent,
-    AdminEventCheckComponent,
     AdminEventEditComponent,
     LoginComponent
   ],
@@ -54,7 +52,8 @@ import { LoginComponent } from './Admin/login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

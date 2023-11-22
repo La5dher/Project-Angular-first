@@ -27,9 +27,7 @@ export class ListAdminComponent implements OnInit{
         );
       }
       else{
-        this.servicePiece.getPlaysTableByName(text).subscribe( 
-          data => this.tabPlays=data
-        );
+        alert("Only search by ID is allowed");
       }
     }
     else{
