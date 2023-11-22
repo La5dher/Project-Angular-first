@@ -59,7 +59,10 @@ export class AdminEventEditComponent {
   }
 
 
-  onDelete(){
-    
+  onDelete(index:number){
+    this.servicePiece.removeCommentByIndex(index,this.Play).subscribe( 
+      data => {
+      }
+    );;
   }
 }

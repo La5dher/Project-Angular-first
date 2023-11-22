@@ -18,9 +18,9 @@
             <hr>
             <h3>Commentaires</h3>
             <div id="commentSection">
-                <ng-container *ngFor="let item of Play.commentaires">
+                <ng-container *ngFor="let item of Play.commentaires;index as i">
                     <p><span id="nom">{{item.nom}}</span> - {{item.date|date}}
-                    <button (click)="onDelete()" >Supprimer message</button></p>
+                    <button (click)="onDelete(i)" >Supprimer message</button></p>
                     <p>{{item.message}}</p>
                     
                 </ng-container>
