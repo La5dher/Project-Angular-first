@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from 'src/app/Classes/event';
+import { Evenement } from 'src/app/Classes/event';
 import { PiecesService } from 'src/app/Services/pieces.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { PiecesService } from 'src/app/Services/pieces.service';
   styleUrls: ['./list-admin.component.css']
 })
 export class ListAdminComponent implements OnInit{
-  tabPlays:Event[]=[];
+  tabPlays:Evenement[]=[];
   val:string ="";
 
   constructor(private servicePiece:PiecesService){}

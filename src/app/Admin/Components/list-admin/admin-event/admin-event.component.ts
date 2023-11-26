@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Event } from 'src/app/Classes/event';
+import { Evenement } from 'src/app/Classes/event';
 
 @Component({
   selector: 'app-admin-event',
@@ -8,7 +8,7 @@ import { Event } from 'src/app/Classes/event';
 })
 export class AdminEventComponent {
   @Output() deleteRequest: EventEmitter<any> = new EventEmitter();
-  @Input()Play!:Event;
+  @Input()Play!:Evenement;
   onDelete(value:number){
     this.deleteRequest.emit(value);
   }

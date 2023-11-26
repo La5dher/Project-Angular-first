@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Event } from 'src/app/Classes/event';
+import { Evenement } from 'src/app/Classes/event';
 import { PiecesService } from 'src/app/Services/pieces.service';
 
 @Component({
@@ -9,12 +9,10 @@ import { PiecesService } from 'src/app/Services/pieces.service';
   styleUrls: ['./selected-event.component.css']
 })
 export class SelectedEventComponent implements OnInit{
-  prixTotal:number=0.0;
-  nbrTickets:number=1;
-  nbrTicketsAchete:number=0;
-  textBoutonAchat:string="Obtenir Ticket(s)";
-  acheter:boolean=false;
-  Play!:Event|undefined;
+  nbPersonnes:number=0;
+  Etat:string="Joindre";
+  join:boolean=false;
+  Play!:Evenement|undefined;
 
 
   constructor(private servicePiece:PiecesService, private serviceActivatedRoute:ActivatedRoute){}
@@ -24,32 +22,24 @@ export class SelectedEventComponent implements OnInit{
       data =>{
       this.Play=data
       if (this.Play!==undefined){
-        this.prixTotal=this.Play.prixTicket;
+        this.nbPersonnes=this.Play.nbrPersonne;
       }}
     );
     
   }
-  onUpdatePrice(val:string){
-    if (this.Play!==undefined){
-      this.nbrTickets=Number(val);
-      this.prixTotal=this.Play.prixTicket*this.nbrTickets;
+  
+  onJoindre(){
+    if (this.join){
+      this.Etat="Joindre";
+      this.join=false;
     }
-  }
-  onAcheter(){
-    if((this.nbrTicketsAchete+this.nbrTicketsAchete)<=10){
-      alert('Succes');
-      this.textBoutonAchat='Obtenir plus de Tickets';
-      this.acheter=true;
-      this.nbrTicketsAchete+=this.nbrTickets;
+    else{
+      this.join=true;
+      this.Etat="Annuler";
     }
-    else
-      alert('Limite de nombre Tickets dépassé');
   }
   OnAnnuler(){
-      alert('Succes');
-      this.textBoutonAchat='Obtenir Ticket(s)';
-      this.acheter=false;
-      this.nbrTicketsAchete=0;
+      
   }
   onAjoute(nom:string, message:string){
     if(message.trim()!=""){

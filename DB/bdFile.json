@@ -4,15 +4,10 @@
       "id": 21,
       "intitule": "Romeo and Juliet",
       "photo": "assets/RomeoAndJuliet.jpg",
-      "prixTicket": 25,
-      "isEnfantGratuit": true,
+      "nbPersonne": 25,
+      "Obligatoire": true,
       "date": "2024-06-24T23:00:00.000Z",
       "commentaires": [
-        {
-          "nom": "Anonymous",
-          "date": "2023-11-10T10:06:55.840Z",
-          "message": "sad"
-        },
         {
           "nom": "yes",
           "date": "2023-11-19T10:41:56.003Z",
@@ -22,14 +17,9 @@
           "nom": "SAE",
           "date": "2023-11-19T13:10:55.695Z",
           "message": "HEEHEHE"
-        },
-        {
-          "nom": "Anonymous",
-          "date": "2023-11-19T13:10:59.380Z",
-          "message": "HEEHEHE"
         }
       ],
-      "lieu": "Théâtre Municipal"
+      "lieu": "Maison de la Culture Ibn Rachiq"
     },
     {
       "id": 503,
@@ -45,7 +35,7 @@
           "message": "hey"
         }
       ],
-      "lieu": "Théâtre Municipal"
+      "lieu": "Maison de la Culture Ibn Rachiq"
     }
   ]
 }
