@@ -20,9 +20,10 @@ import { Error404Component } from './error404/error404.component';
 import { SettingsComponent } from './Admin/Components/settings/settings.component';
 import { ListAdminComponent } from './Admin/Components/list-admin/list-admin.component';
 import { AdminEventComponent } from './Admin/Components/list-admin/admin-event/admin-event.component';
-import { AdminEventEditComponent } from './Admin/Components/list-admin/admin-event/admin-event-edit/admin-event-edit.component';
+import { AdminEventEditComponent } from './Admin/Components/list-admin/admin-event-edit/admin-event-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './Admin/login/login.component';
+import { AddEventComponent } from './Admin/Components/list-admin/add-event/add-event.component';
 
 
 
@@ -46,7 +47,8 @@ import { LoginComponent } from './Admin/login/login.component';
     SettingsComponent,
     AdminEventComponent,
     AdminEventEditComponent,
-    LoginComponent
+    LoginComponent,
+    AddEventComponent
   ],
   imports: [
     BrowserModule,

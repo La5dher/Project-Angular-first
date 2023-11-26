@@ -1,7 +1,8 @@
 
-<input placeholder="Type old Password" #oldpass>
-<input placeholder="Type new Password">
-<input placeholder="Confirm new Password" #newpass>
+<input placeholder="Type old Password" #oldpass><br>
+<input placeholder="Type new Password"><br>
+<input placeholder="Confirm new Password" #newpass><br>
 
 <button (click)="onChangeMdp(newpass.value, oldpass.value)">Change Password</button>
-<button (click)="onDisconnect()">Déconnexion</button>
+<br><br><br>
+<button class="btn btn-danger" (click)="onDisconnect()">Déconnexion</button>
