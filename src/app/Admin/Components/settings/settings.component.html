@@ -1,8 +1,12 @@
-
-<input placeholder="Type old Password" #oldpass><br>
-<input placeholder="Type new Password"><br>
-<input placeholder="Confirm new Password" #newpass><br>
-
-<button (click)="onChangeMdp(newpass.value, oldpass.value)">Change Password</button>
+<br>
+<form  [formGroup]="playPasswordChangeForm"  (ngSubmit)="onChangeMdp(newpass.value, oldpass.value)">
+    <h3>Changer mot de passe:</h3>
+    <input placeholder="Entrez ancien mot de passe" formControlName="oldPassword" class="pass" #oldpass><br>
+    <input placeholder="Entrez nouveau mot de passe" formControlName="password" class="pass" #newpass><br>
+    <div class="erreurAffiche" *ngIf="Password?.invalid && Password?.touched">
+        Le mot de passe doit être 8 caractères minimum
+    </div>
+    <button [disabled]="playPasswordChangeForm.invalid">Change Password</button>
+</form>
 <br><br><br>
 <button class="btn btn-danger" (click)="onDisconnect()">Déconnexion</button>

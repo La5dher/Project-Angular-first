@@ -1,9 +1,9 @@
 <div >
     <h4 #Id>{{Play.id|id}}</h4>
-    Pièce: {{Play.intitule}}
+    Evénement: {{Play.intitule}}
     -- Le: {{Play.date|date}}
     -- Lieu: {{Play.lieu}}
-    <button [routerLink]="['/admin/gestion/edit/',Play.id]">Edit</button>
-    <button (click)="onDelete(Play.id)">Delete</button>
+    <button [routerLink]="['/admin/gestion/edit/',Play.id]">Editer</button>
+    <button (click)="onDelete(Play.id)">Supprimer</button>
 </div>
 

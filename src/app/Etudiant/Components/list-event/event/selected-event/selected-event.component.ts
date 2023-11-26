@@ -20,10 +20,8 @@ export class SelectedEventComponent implements OnInit{
     let Id=this.serviceActivatedRoute.snapshot.params['id'];
     this.servicePiece.getPlaysById(Id).subscribe( 
       data =>{
-      this.Play=data
-      if (this.Play!==undefined){
-        this.nbPersonnes=this.Play.nbrPersonne;
-      }}
+        this.Play=data;
+      }
     );
     
   }
@@ -32,10 +30,22 @@ export class SelectedEventComponent implements OnInit{
     if (this.join){
       this.Etat="Joindre";
       this.join=false;
+      if(this.Play){
+        this.Play.nbrPersonne--;
+        this.servicePiece.updatePlaysTableById(this.Play).subscribe(
+          data=>{}
+        );
+      }
     }
     else{
       this.join=true;
       this.Etat="Annuler";
+      if(this.Play){
+        this.Play.nbrPersonne++;
+        this.servicePiece.updatePlaysTableById(this.Play).subscribe(
+          data=>{ console.log(data)}
+        );
+      }
     }
   }
   OnAnnuler(){

@@ -1,0 +1,12 @@
+input.ng-touched.ng-valid {border-right: 5px solid green;}
+input.ng-touched.ng-invalid {border-right: 5px solid red;}
+
+.erreurAffiche{
+    background-color: rgba(255, 0, 0, 0.1);
+    color: red;
+    padding-left: 2%;
+}
+
+.pass{
+    width: 20vw;
+}

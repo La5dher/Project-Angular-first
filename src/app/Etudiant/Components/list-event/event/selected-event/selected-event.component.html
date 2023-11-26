@@ -2,13 +2,13 @@
 <ng-container *ngIf="Play">
     <div id="contains">
         <div id="contained">
-        <h2>Pièce: {{Play.intitule}}{{Play.id|id}}</h2>
+        <h2>Evenement: {{Play.intitule}}{{Play.id|id}}</h2>
         </div>
         <img [src]="Play.photo" alt="photoEvent">
         <p>Lieu: {{Play.lieu}}</p>
         <p>Date: {{Play.date|date}}</p>
         <button [ngClass]="join?'btn btn-danger':'btn btn-primary'" (click)="onJoindre()">{{Etat}}</button>
-        <p>{{nbPersonnes}} participants pour cette Pièce</p>
+        <p>{{Play.nbrPersonne}} participants pour cette Pièce</p>
 
         <hr>
         <h3>Commentaires</h3>
