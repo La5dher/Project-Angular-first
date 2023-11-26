@@ -1,0 +1,44 @@
+
+<ng-container *ngIf="Play">
+    <div id="contains" >
+
+        <form  [formGroup]="playEditForm"  (ngSubmit)="onSubmit();onReset()">
+            <h2>Nom Evénement: <input type="text" id="changable" formControlName="intitule" ></h2>
+                <div class="erreurAffiche" *ngIf="intitule?.invalid&&intitule?.touched">
+                    Nom Obligatoire
+                </div>
+
+            <p>Lien Photo: <input type="text" formControlName="photo" ></p>
+            <p>Obligatoire: 
+                <input type="radio" formControlName="Obligatoire" value="true" name="Obligatoire" id="ouiOb">  Oui
+                <input type="radio" formControlName="Obligatoire" value="false" name="Obligatoire" id="nonOb">  Non
+            </p>
+            
+            <p>Lieu: <input type="text" formControlName="lieu" ></p>
+            <div class="erreurAffiche" *ngIf="lieu?.invalid&&lieu?.touched">
+                Lieu Obligatoire
+            </div>
+            <p>Date: <input type="date" id="date" formControlName="date" ></p>
+            <div class="erreurAffiche" *ngIf="date?.invalid&&date?.touched">
+                Date Obligatoire
+            </div>
+            <button type="submit" [disabled]="playEditForm.invalid">Ajouter</button>
+        </form>
+            <hr>
+            <h3>Commentaires</h3>
+            <div id="commentSection">
+                <ng-container *ngFor="let item of Play.commentaires;index as i">
+                    <p><span id="nom">{{item.nom}}</span> - {{item.date|date}}
+                    <button (click)="onDelete(i)" >Supprimer message</button></p>
+                    <p>{{item.message}}</p>
+                    
+                </ng-container>
+                
+            </div>
+
+            
+        
+
+
+    </div>
+</ng-container>

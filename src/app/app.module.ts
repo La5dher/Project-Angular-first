@@ -26,7 +26,6 @@ import { LoginComponent } from './Admin/login/login.component';
 import { AddEventComponent } from './Admin/Components/list-admin/add-event/add-event.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

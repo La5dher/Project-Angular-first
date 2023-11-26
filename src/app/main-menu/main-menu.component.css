@@ -5,7 +5,7 @@
 }
 a{
     color: white;
-    font-size: 50px;
+    font-size: 3vw;
     text-decoration: none;
 }
 
@@ -49,7 +49,7 @@ a{
 
     50% {filter: brightness(90%);
         background-image: url(src\assets\happy.jpg) ;
-        transform: scale(0.6) rotate(-10deg);
+        transform: scale(0.5) rotate(-10deg);
     }
     
     60% { background-image: url(src\assets\BL.jpg) ; }
@@ -57,14 +57,14 @@ a{
     75% {
         filter: brightness(90%);
         background-image: url(src\assets\sadge.jpg) ;
-        transform: scale(0.6) rotate(-15deg);
+        transform: scale(0.5) rotate(-15deg);
     }
     
     90% { background-image: url(src\assets\BL.jpg) ; }
 
     100% {filter: brightness(90%);
         background-image: url(src\assets\happy.jpg) ;
-        transform: scale(0.6) rotate(-20deg);
+        transform: scale(0.5) rotate(-20deg);
     }
   }
 
@@ -76,19 +76,19 @@ a{
     0% { }
     50% {filter: brightness(90%);
         background-image: url(src\assets\sadge.jpg) ;
-        transform: translate(50px,120px) scale(0.6) rotate(10deg);
+        transform: translate(50px,120px) scale(0.5) rotate(10deg);
     }
     60% { background-image: url(src\assets\BL.jpg) ; }
 
     75% {
         filter: brightness(90%);
         background-image: url(src\assets\happy.jpg) ;
-        transform: translate(50px,120px) scale(0.6) rotate(15deg);
+        transform: translate(50px,120px) scale(0.5) rotate(15deg);
     }
     90% { background-image: url(src\assets\BL.jpg) ; }
     100% {filter: brightness(90%);
         background-image: url(src\assets\sadge.jpg) ;
-        transform: translate(50px,120px) scale(0.6) rotate(20deg);
+        transform: translate(50px,120px) scale(0.5) rotate(20deg);
     }
   }
 

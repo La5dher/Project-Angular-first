@@ -1,0 +1,40 @@
+#commentSection{
+    background-color: grey;
+    width: 60em;
+    height: 20em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#nom{
+    text-decoration: underline;
+}
+
+#contains{
+    margin: 5% 10%;
+}
+#contained{
+    margin: 5% 0%;
+}
+#changable{
+    margin: 0% 5%;
+    width: 50%;
+    border: 0.2em solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+
+#id{
+    width: 10%;
+}
+
+#date{
+    width: 50%;
+}
+
+.erreurAffiche{
+    background-color: rgba(255, 0, 0, 0.1);
+    color: red;
+    padding-left: 2%;
+}
